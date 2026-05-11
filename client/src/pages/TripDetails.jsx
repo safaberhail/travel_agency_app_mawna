@@ -15,7 +15,7 @@ const TripDetails = () => {
     });
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/api/trips/${id}`).then(res => {
+        axios.get(`https://travel-agency-app-mawna-3.onrender.com/api/trips/${id}`).then(res => {
             setTrip(res.data);
             setLoading(false);
         }).catch(() => setLoading(false));
@@ -25,7 +25,7 @@ const TripDetails = () => {
         e.preventDefault();
         try {
             const finalData = { ...bookingData, trip_id: id, trip_title: trip.title, totalPrice: trip.price * bookingData.persons, status: 'Confirmed', paidAmount: Number(bookingData.paidAmount) };
-            await axios.post('http://localhost:5001/api/bookings', finalData);
+            await axios.post('https://travel-agency-app-mawna-3.onrender.com/api/bookings', finalData);
             alert("✅ تم الحجز في سجلات الوكالة");
             navigate('/admin/management');
         } catch (err) { alert("❌ فشل الحجز"); }
@@ -39,14 +39,14 @@ const TripDetails = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                 <div className="lg:col-span-2">
                     <div className="flex justify-center mb-6">
-                        <img src={`http://localhost:5001${trip.image}`} className="w-full max-w-2xl h-[300px] object-cover rounded-3xl shadow-xl border border-gray-100" alt={trip.title} />
+                        <img src={`https://travel-agency-app-mawna-3.onrender.com${trip.image}`} className="w-full max-w-2xl h-[300px] object-cover rounded-3xl shadow-xl border border-gray-100" alt={trip.title} />
                     </div>
                     <div className="flex justify-between items-center mb-4">
                         <h1 className="text-4xl font-black text-gray-900">{trip.title}</h1>
                         {isAdmin && (
                             <button onClick={() => {
                                 if(window.confirm("حذف الرحلة نهائياً؟")) {
-                                    axios.delete(`http://localhost:5001/api/trips/${id}`).then(() => navigate('/'));
+                                    axios.delete(`https://travel-agency-app-mawna-3.onrender.com/api/trips/${id}`).then(() => navigate('/'));
                                 }
                             }} className="bg-red-600 text-white px-4 py-2 rounded-xl text-sm font-bold">حذف الرحلة 🗑️</button>
                         )}

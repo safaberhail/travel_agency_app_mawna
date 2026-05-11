@@ -18,7 +18,7 @@ const AddBookingManual = () => {
 
     useEffect(() => {
         // جلب الرحلات المتوفرة ليختار المدير منها
-        axios.get('http://localhost:5001/api/trips')
+        axios.get('https://travel-agency-app-mawna-3.onrender.com//api/trips')
             .then(res => {
                 setTrips(res.data);
                 setLoading(false);
@@ -45,7 +45,7 @@ const AddBookingManual = () => {
                 totalPrice: selectedTrip.price * formData.persons
             };
 
-            await axios.post('http://localhost:5001/api/bookings', finalData);
+            await axios.post('https://travel-agency-app-mawna-3.onrender.com/api/bookings', finalData);
             alert("✅ تم تسجيل المسافر بنجاح وتحديث المقاعد المالية.");
             navigate('/admin/dashboard'); // الانتقال للداشبورد لرؤية الحجز
         } catch (err) {

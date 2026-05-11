@@ -13,7 +13,7 @@ const AdminManagement = () => {
 
     const loadData = async () => {
         try {
-            const res = await axios.get('http://localhost:5001/api/bookings');
+            const res = await axios.get('https://travel-agency-app-mawna-3.onrender.com/api/bookings');
             setBookings(res.data);
             setLoading(false);
         } catch (err) {
@@ -35,14 +35,14 @@ const AdminManagement = () => {
 
     const handleConfirm = async (id) => {
         if(window.confirm("تأكيد الحجز سيقوم بخصم مقعد من الرحلة. هل أنت متأكد؟")) {
-            await axios.patch(`http://localhost:5001/api/bookings/${id}`, { status: 'Confirmed' });
+            await axios.patch(`https://travel-agency-app-mawna-3.onrender.com/api/bookings/${id}`, { status: 'Confirmed' });
             loadData();
         }
     };
 
     const handleDelete = async (id) => {
         if(window.confirm("حذف هذا السجل نهائياً؟")) {
-            await axios.delete(`http://localhost:5001/api/bookings/${id}`);
+            await axios.delete(`https://travel-agency-app-mawna-3.onrender.com/api/bookings/${id}`);
             loadData();
         }
     };
@@ -53,7 +53,7 @@ const AdminManagement = () => {
     };
 
     const handleUpdate = async () => {
-        await axios.patch(`http://localhost:5001/api/bookings/${editingBooking._id}`, editData);
+        await axios.patch(`https://travel-agency-app-mawna-3.onrender.com/api/bookings/${editingBooking._id}`, editData);
         setEditingBooking(null);
         loadData();
     };

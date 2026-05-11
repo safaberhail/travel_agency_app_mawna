@@ -32,7 +32,7 @@ const AddTrip = () => {
 
         try {
             // الإرسال للمنفذ 5001
-            await axios.post('http://localhost:5001/api/trips', data, {
+            await axios.post('https://travel-agency-app-mawna-3.onrender.com/api/trips', data, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             alert("✅ تم إضافة الرحلة بنجاح!");

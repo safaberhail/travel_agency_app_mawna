@@ -38,4 +38,4 @@ app.use('/api/bookings', require('./src/routes/bookingRoutes'));
 app.use('/api/auth', require('./src/routes/authRoutes'));
 
 const PORT = 5001;
-app.listen(PORT, () => console.log(`🚀 Server on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server on https://travel-agency-app-mawna-3.onrender.com/${PORT}`));

@@ -1,1 +1,3 @@
-export const API_URL = "http://localhost:5001";
+const API_URL = "https://travel-agency-app-mawna-3.onrender.com";
+
+export default API_URL;

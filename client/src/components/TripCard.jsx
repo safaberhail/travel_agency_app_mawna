@@ -35,7 +35,7 @@ const TripCard = ({ trip }) => {
       )}
 
       <img 
-        src={`http://localhost:5001${trip.image}`} 
+        src={`https://travel-agency-app-mawna-3.onrender.com/${trip.image}`} 
         alt={trip.title} 
         className="w-full h-56 object-cover"
       />

@@ -9,7 +9,7 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:5001/api/auth/login', form);
+            const res = await axios.post('https://travel-agency-app-mawna-3.onrender.com/api/auth/login', form);
             localStorage.setItem('adminToken', res.data.token);
             alert("✅ تم الدخول بنجاح!");
             navigate('/admin/management');
