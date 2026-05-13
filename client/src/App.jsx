@@ -50,7 +50,7 @@ function App() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-          جميع الحقوق محفوظة © 2024 - {AGENCY_SETTINGS.name}
+          جميع الحقوق محفوظة  - {AGENCY_SETTINGS.name}
         </div>
       </footer>
     </div>
